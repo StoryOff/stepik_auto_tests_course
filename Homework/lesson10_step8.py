@@ -15,14 +15,14 @@ try:
     browser = webdriver.Chrome()
     browser.get(link)
 
-    button1 = browser.find_element(By.ID, "book")
+    button0 = browser.find_element(By.ID, "book")
 
     WebDriverWait(browser, 12).until(
         EC.text_to_be_present_in_element((By.ID, "price"), "$100"))
 
-    button1.click()
+    button0.click()
 
-    button2 = browser.find_element(By.ID, "solve")
+    button1 = browser.find_element(By.ID, "solve")
     browser.execute_script("return arguments[0].scrollIntoView(true);", button2)
 
     x = browser.find_element(By.ID, "input_value").text
@@ -31,7 +31,7 @@ try:
     input1 = browser.find_element(By.ID, "answer")
     input1.send_keys(y)
 
-    button2.click()
+    button1.click()
 
 
 finally:
